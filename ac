@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Personal Cooling | Discover Everyday Comfort</title>
+<meta name="description" content="Explore a compact personal cooling solution designed for everyday spaces. Discover its features, setup and convenience.">
+<meta name="theme-color" content="#102c4c">
+
+<style>
+:root {
+  --navy: #102c4c;
+  --blue: #1769d2;
+  --light-blue: #edf6ff;
+  --text: #293b50;
+  --muted: #68798d;
+  --border: #e4ebf3;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--white);
+}
+a { text-decoration: none; }
+.container {
+  width: min(1100px, 90%);
+  margin: auto;
+}
+.topbar {
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+}
+.logo {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -.5px;
+}
+nav {
+  display: flex;
+  gap: 25px;
+}
+nav a {
+  color: var(--text);
+  font-size: 13px;
+}
+nav a:hover { color: var(--blue); }
+.btn {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: .2s;
+}
+.btn:hover {
+  background: #1054ae;
+  transform: translateY(-2px);
+}
+.hero {
+  background: linear-gradient(135deg, #edf6ff, #ffffff 80%);
+  padding: 100px 0 90px;
+  text-align: center;
+}
+.hero-content {
+  max-width: 820px;
+  margin: auto;
+}
+.eyebrow {
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+h1 {
+  color: var(--navy);
+  font-size: clamp(39px, 6vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+  margin: 20px 0;
+}
+.hero p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 17px;
+}
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.text-link {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--blue);
+}
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 28px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  gap: 20px;
+}
+.trust-strip strong {
+  display: block;
+  color: var(--navy);
+  font-size: 14px;
+}
+.trust-strip span {
+  font-size: 12px;
+  color: var(--muted);
+}
+section { padding: 82px 0; }
+.section-heading {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 45px;
+}
+h2 {
+  color: var(--navy);
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -1.3px;
+  line-height: 1.2;
+  margin: 12px 0 15px;
+}
+.section-heading p {
+  color: var(--muted);
+  margin: 0;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.feature {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  background: #fff;
+  transition: .2s;
+}
+.feature:hover {
+  border-color: #b9d6f6;
+  box-shadow: 0 12px 35px #102c4c0c;
+  transform: translateY(-3px);
+}
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--light-blue);
+  color: var(--blue);
+  border-radius: 12px;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+h3 {
+  color: var(--navy);
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+.feature p, .step p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+.split {
+  background: #f5f9fd;
+}
+.split-content {
+  max-width: 790px;
+  margin: auto;
+  text-align: center;
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 25px auto;
+  max-width: 540px;
+  text-align: left;
+}
+.check-list li {
+  margin: 13px 0;
+  color: var(--text);
+}
+.check-list li::before {
+  content: "✓";
+  color: var(--blue);
+  font-weight: bold;
+  margin-right: 12px;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step {
+  text-align: center;
+  padding: 28px 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.step-number {
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  width: 48px;
+  height: 48px;
+  background: var(--blue);
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.use-section {
+  background: var(--navy);
+  color: white;
+}
+.use-section h2, .use-section h3 {
+  color: white;
+}
+.use-section .section-heading p {
+  color: #d0dcec;
+}
+.use-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.use-card {
+  border: 1px solid #ffffff30;
+  background: #ffffff09;
+  border-radius: 14px;
+  padding: 27px;
+}
+.use-card p {
+  color: #d0dcec;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.faq {
+  max-width: 780px;
+  margin: auto;
+}
+details {
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+summary {
+  color: var(--navy);
+  font-weight: bold;
+  cursor: pointer;
+}
+details p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.final-cta {
+  background: var(--light-blue);
+  text-align: center;
+  padding: 80px 20px;
+}
+.final-cta p {
+  max-width: 620px;
+  color: var(--muted);
+  margin: 18px auto 27px;
+}
+.small-note {
+  font-size: 11px;
+}
+footer {
+  background: #0a2038;
+  color: #d0dcec;
+  padding: 32px 0;
+  font-size: 12px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+footer a {
+  color: white;
+  margin-left: 16px;
+}
+.disclaimer {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #ffffff20;
+  color: #aebed0;
+  font-size: 11px;
+}
+@media(max-width: 760px) {
+  nav { display: none; }
+  header .btn {
+    padding: 11px 14px;
+    font-size: 12px;
+  }
+  .hero { padding: 72px 0; }
+  h1 { letter-spacing: -1.5px; }
+  .hero p { font-size: 15px; }
+  .trust-strip { gap: 10px; }
+  .trust-strip strong { font-size: 11px; }
+  .trust-strip span { font-size: 10px; }
+  section { padding: 58px 0; }
+  .features, .steps, .use-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature, .use-card { padding: 23px; }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  footer a { margin: 0 12px 0 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  A FRESH APPROACH TO PERSONAL COMFORT
+</div>
+
+<header class="container">
+  <a href="#" class="logo">PERSONAL COOLING</a>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#experience">Benefits</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQs</a>
+  </nav>
+
+  <a class="btn" href="YOUR_CHECKOUT_URL">Explore Offer</a>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-content">
+    <span class="eyebrow">Comfort made personal</span>
+
+    <h1>A Little More Cool.<br>A Lot More Comfort.</h1>
+
+    <p>
+      Discover a compact personal cooling solution designed
+      for everyday spaces. Create a more comfortable setup
+      for your desk, bedroom or favorite corner.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn" href="YOUR_CHECKOUT_URL">
+        Discover the Offer →
+      </a>
+      <a class="text-link" href="#features">
+        Explore Features ↓
+      </a>
+    </div>
+
+    <p class="small-note" style="margin-top:24px">
+      Explore the product details and see if it fits your needs.
+    </p>
+  </div>
+</section>
+
+<div class="container trust-strip">
+  <div>
+    <strong>Compact Design</strong>
+    <span>Designed for personal spaces</span>
+  </div>
+  <div>
+    <strong>Everyday Convenience</strong>
+    <span>Fits your daily routine</span>
+  </div>
+  <div>
+    <strong>Personal Comfort</strong>
+    <span>Explore a cooling alternative</span>
+  </div>
+</div>
+
+<section id="features">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Designed around you</span>
+      <h2>Small Details. Everyday Difference.</h2>
+      <p>
+        Explore the features and practical considerations
+        that matter when choosing a personal cooling device.
+      </p>
+    </div>
+
+    <div class="features">
+      <article class="feature">
+        <div class="feature-icon">❄</div>
+        <h3>Personal Comfort</h3>
+        <p>
+          Consider a compact cooling option for a suitable
+          personal area in your home or workspace.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">⌂</div>
+        <h3>Space-Conscious Design</h3>
+        <p>
+          Explore a convenient option for desks, bedside tables
+          and other appropriate surfaces.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">↗</div>
+        <h3>Flexible Placement</h3>
+        <p>
+          Choose a location that follows the device's
+          ventilation and placement instructions.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">☀</div>
+        <h3>Warm-Weather Comfort</h3>
+        <p>
+          Consider your personal cooling needs when preparing
+          your space for warmer days.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">⚙</div>
+        <h3>Simple Setup</h3>
+        <p>
+          Review the supplied instructions for installation,
+          operation, cleaning and routine care.
+        </p>
+      </article>
+
+      <article class="feature">
+        <div class="feature-icon">✦</div>
+        <h3>Everyday Versatility</h3>
+        <p>
+          Check the specifications to determine whether
+          the available features suit your routine.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="split" id="experience">
+  <div class="container split-content">
+    <span class="eyebrow">Your space, your choice</span>
+    <h2>Make Room for a More Comfortable Routine.</h2>
+
+    <p>
+      From working at your desk to relaxing at home,
+      the right personal cooling setup can be a practical
+      addition to your everyday environment.
+    </p>
+
+    <ul class="check-list">
+      <li>Consider the device's dimensions before placement.</li>
+      <li>Check its power requirements and operating instructions.</li>
+      <li>Follow the manufacturer's recommended care routine.</li>
+      <li>Compare the specifications with your personal needs.</li>
+    </ul>
+
+    <a class="btn" href="YOUR_CHECKOUT_URL">
+      View Product Offer →
+    </a>
+  </div>
+</section>
+
+<section id="how-it-works">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Getting started</span>
+      <h2>Three Simple Steps</h2>
+      <p>
+        Always follow the instructions provided with your
+        particular cooling device.
+      </p>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <div class="step-number">1</div>
+        <h3>Choose Your Spot</h3>
+        <p>
+          Find a stable location with the clearance
+          and ventilation recommended by the manufacturer.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">2</div>
+        <h3>Follow the Setup</h3>
+        <p>
+          Connect the power source and add water only
+          if the instructions require it.
+        </p>
+      </article>
+
+      <article class="step">
+        <div class="step-number">3</div>
+        <h3>Adjust as Directed</h3>
+        <p>
+          Use the available settings according to the
+          supplied manual and safety guidance.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="use-section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow" style="color:#a8d1ff">
+        Everyday possibilities
+      </span>
+      <h2>Where Could It Fit Into Your Day?</h2>
+      <p>
+        Choose a location that matches the device's
+        actual capabilities and recommended use.
+      </p>
+    </div>
+
+    <div class="use-grid">
+      <article class="use-card">
+        <h3>At Your Desk</h3>
+        <p>
+          Consider a suitable spot near your workspace,
+          keeping cables and surrounding surfaces safe.
+        </p>
+      </article>
+
+      <article class="use-card">
+        <h3>In Your Bedroom</h3>
+        <p>
+          Check operating noise, airflow direction and
+          placement instructions before use.
+        </p>
+      </article>
+
+      <article class="use-card">
+        <h3>In Your Living Space</h3>
+        <p>
+          Find an appropriate location that allows
+          unobstructed airflow and safe operation.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>
+        Get familiar with the product before making a decision.
+      </p>
+    </div>
+
+    <div class="faq">
+      <details>
+        <summary>Is a portable cooler the same as an air conditioner?</summary>
+        <p>
+          Not necessarily. Cooling performance depends on the
+          technology used. Evaporative coolers use water evaporation
+          and generally work best in dry conditions. They do not
+          work like compressor-based air conditioners.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does it need water?</summary>
+        <p>
+          This depends on the model. Check the actual product
+          specifications to confirm whether water is required.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I use it in any room?</summary>
+        <p>
+          Choose a location that follows the manufacturer's
+          ventilation, electrical and placement instructions.
+          Room conditions can affect the cooling experience.
+        </p>
+      </details>
+
+      <details>
+        <summary>How do I maintain the device?</summary>
+        <p>
+          Follow the supplied maintenance instructions for
+          cleaning, water replacement where applicable and storage.
+        </p>
+      </details>
+
+      <details>
+        <summary>Where can I check the price and specifications?</summary>
+        <p>
+          Visit the offer page to review the seller's current
+          product details, price, shipping terms and return policy.
+        </p>
+      </details>
+
+      <details>
+        <summary>Is this suitable for a large room?</summary>
+        <p>
+          Suitability depends on the device's actual cooling
+          capacity and intended use. Check the manufacturer's
+          specifications before purchasing.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <span class="eyebrow">Find your fit</span>
+    <h2>Ready to Explore a Cooler Setup?</h2>
+
+    <p>
+      Review the available offer, product specifications
+      and purchase terms to decide whether this personal
+      cooling solution is right for you.
+    </p>
+
+    <a class="btn" href="YOUR_CHECKOUT_URL">
+      Check the Offer →
+    </a>
+
+    <p class="small-note">
+      Features, performance, price and availability depend
+      on the actual product and seller.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Personal Cooling. All rights reserved.</div>
+
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      This website is for informational and promotional purposes.
+      Verify product specifications, performance claims, pricing,
+      shipping details and seller policies before publishing.
+      If you receive a commission from qualifying purchases,
+      disclose that relationship clearly.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
